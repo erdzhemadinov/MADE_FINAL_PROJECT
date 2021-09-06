@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class="back_image">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../static/style_fonts.css" type="text/css">
+		<link rel="stylesheet" href="../static/style_menu.css" type="text/css">
+		<link rel="stylesheet" href="../static/style.css" type="text/css">
+		<title>Troll detector</title>
+		<link rel="shortcut icon" href="../static/pic/troll.png" type="image/png">
+	</head>
+	<body>
+		<header class="wrapper">
+			<h1 class="name_service">Сервис по определению троллинга<br>в ответе на вопрос</h1>
+		</header>
+		<div class="content" style="text-align: center;">
+			<nav>
+				<ul class="top-menu">
+					<li><a href="/q_a/"> Вопрос-ответ</a></li>
+					<li class="active"><a href="/link/">Поиск по ссылке</a></li>
+					<li><a href="/history/">История запросов</a></li>
+					<li><a href="/service/">О сервисе</a></li>
+				</ul>
+			</nav>
+			<br>
+				<form name="search" action="/link/" method="get">
+					<label for="type_site">Портал:</label>
+					<select style="height: 32px;" id="select_site" name="type_site" form="search">
+						<option value="answers_mail.ru">Ответы Mail.ru</option>
+						<option value="yandex_q" disabled>Яндекс Q</option>
+						<option value="thequestion.ru" disabled>The Question</option>
+						<option value="qna.habr.com" disabled>Хабр Q&A</option>
+						<option value="sprosi.xyz" disabled>Спроси.xyz</option>
+					</select>
+					<input class="link"
+					autofocus
+					required 
+					type="text" 
+					name="link_to_site"
+					autocomplete="off"
+					placeholder="Пример: https://otvet.mail.ru/question/1234567 или 1234567"
+					size="60">
+					<button class="link" type="submit">Найти</button>
+				</form>
+			<p><i>Результаты</i></p>
+			<iframe 
+				style="border: 0px; width: 100%"
+				src="/table_proba/"
+				height="600">
+			</iframe>
+		</div>
+		<footer></footer>
+	</body>
+</html>

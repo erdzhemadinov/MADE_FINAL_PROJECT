@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="back_image">
+	<head>
+		<meta charset="utf-8">
+		<!--<link rel="stylesheet" href="{{ url_for('static', filename='style_font_Oswald.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style_menu.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">-->
+		<link rel="stylesheet" href="../static/style_fonts.css" type="text/css">
+		<link rel="stylesheet" href="../static/style_menu.css" type="text/css">
+		<link rel="stylesheet" href="../static/style.css" type="text/css">
+		<title>Troll detector</title>
+		<link rel="shortcut icon" href="../static/pic/troll.png" type="image/png">
+	</head>
+	<body>
+		<header class="wrapper">
+			<h1 class="name_service">Сервис по определению троллинга<br>в ответе на вопрос</h1>
+		</header>
+		<div class="content" style="text-align: center;">
+			<nav>
+				<ul class="top-menu">
+					<li class="active"> <a href="/q_a/"> Вопрос-ответ</a></li>
+					<li><a href="/link/">Поиск по ссылке</a></li>
+					<li><a href="/history/">История запросов</a></li>
+					<li><a href="/service/">О сервисе</a></li>
+				</ul>
+			</nav>
+			<br>
+			<form name="predict" action="/q_a/" method="post">
+				<p>
+					<textarea 
+					required
+					type="text"
+					name="question", 
+					cols="65",  
+					rows="4", 
+					placeholder="Введите вопрос">{{ result['question'] }}</textarea>
+				</p>
+				<p>
+					<textarea
+					required
+					type="text"
+					name="answer",
+					cols="65",
+					rows="4",
+					placeholder="Введите ответ">{{ result['answer'] }}</textarea>
+				</p>
+				<p><button name="submit">Проверить</button></p>
+				<p style="font: 22px 'MyriadPro;">{{ result['proba'] }}</p>
+				<img src="{{ result['smile'][0] }}" height="5%" width="5%">
+				<img src="{{ result['smile'][1] }}" height="5%" width="5%">
+				<img src="{{ result['smile'][2] }}" height="5%" width="5%">
+				<img src="{{ result['smile'][3] }}" height="5%" width="5%">
+				<img src="{{ result['smile'][4] }}" height="5%" width="5%"><br>
+				<canvas id="myCanvas" width="350" height="20"
+                	style="background-color:rgba(0, 0, 0, 0); border: 0px solid #ccc; margin:10px;">
+            		Ваш браузер не поддерживает Canvas
+				</canvas>
+				<script src="../static/trollbar.js"></script>
+			</form>
+		</div>
+		<footer></footer>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html style="background-color: rgba(255, 255, 255);">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../static/style_fonts.css" type="text/css">
+		<link rel="stylesheet" href="../static/style_menu.css" type="text/css">
+		<link rel="stylesheet" href="../static/style.css" type="text/css">
+	</head>
+	<body>
+		<header class="wrapper">
+		</header>
+		<div class="content_form" style="text-align: center;">
+			<!-- <p>
+				Вопрос: {{ result['question']}}
+			</p>
+			<p>
+				Ответ: {{ result['answer']}}
+			</p> -->
+			5 наиболее значимых признаков влияющих на результат<br>
+			<iframe 
+				style="border: 0px; width: 100%;"
+				src="/table_top/"
+				height="200">
+			</iframe>
+			<p style="text-align: justify; padding: 0px 100px;">
+				
+				Под долей вклада понимается отношение вклада признака к суммарному вкладу всех признаков в данный класс <br><br>
+				<font color="#ff0d57">Розовым</font> цветом выделены признаки и их значения повышающие вероятность "троллинга"<br>
+				<font color="#1e88e5">Синим</font> цветом выделены признаки и их значения повышающие вероятность "не троллинга"
+			</p>
+			<details>
+				<summary><i>Развернутая информация</i></summary>
+				<!-- <i>Круговые диаграммы</i><br>
+				Текст для позитивного<br>
+				<iframe 
+					style="border: 1px; width: 100%;"
+					src="/draw_pos/"
+					height="700">
+				</iframe>
+				<img src="../static/pic/pos.png"><br>
+				Текст для негативного<br>
+				<img src="../static/pic/neg.png"><br> -->
+				<i>Интерпретация ответа на вопрос</i>
+				<iframe 
+					style="border: 0px; width: 100%"
+					src="/single_plot/"
+					height="170">
+				</iframe>
+				<i>Комментарии по интерпретации</i>
+				<p style="text-align: justify; padding: 0px 10px;">
+					Число, выделенное <b>жирным шрифтом</b> показывает вероятность принадлежности ответа на вопрос к классу «троллинг».<br>
+					Признаки, выделенные <font color="#ff0d57">розовым цветом</font>, «сдвигают» вероятность принадлежности ответа к классу «троллинг» ближе к значению 1.0, <font color="#1e88e5">голубого</font>  — к классу «не троллинг».
+					Величина стрелок соответствует влиянию каждого признака на предсказанную вероятность принадлежности к классу «троллинг» (чем длиннее стрелка, тем сильнее влияние).
+					Под стрелками указано значение каждого признака, для данной пары вопрос-ответ.
+					«<font color="#929eb6">base value</font>» (базовое значение) — это вероятность принадлежности к классу «троллинг», при условии, что неизвестны значения каждого признака (средний прогноз модели по обучающей выборке).
+				</p>
+				<i>Таблица с значениями параметров</i>
+				<iframe 
+					style="width: 100%; border: 0px; text-align: center;"
+					src="/table_interpretation/"
+					height="1100">
+				</iframe>
+			</details>
+		</div>
+		<footer></footer>
+	</body>
+</html>

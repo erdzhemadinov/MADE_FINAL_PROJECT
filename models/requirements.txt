@@ -1,0 +1,11 @@
+scikit-learn==0.23.1
+pytorch
+transformers==3.4.0
+transformers==3.4.0
+natasha==1.4.0
+navec==0.10.0
+pandas==1.0.5
+slovnet==0.5.0
+cudatoolkit==10.2
+tqdm==4.47.0
+flask
