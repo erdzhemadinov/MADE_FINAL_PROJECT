@@ -1,6 +1,6 @@
 MADE2020 final project.
 
-Theme: Reinforcement learning for trolling detection in otvet.mail.ru.
+Theme: Trolling detection in otvet.mail.ru.
 
 Curator:
 [Pavel Sulimov](https://github.com/Genius-Gerund)
